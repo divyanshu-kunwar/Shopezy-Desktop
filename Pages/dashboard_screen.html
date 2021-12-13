@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopEzy - Home</title>
+  <link rel="stylesheet" href="../style/dashboardscreen.css" />
+  <script src="../script/qrcode.min.js"></script>
+  <script src="../script/p5.js"></script>
+  <script src="../script/analytics1.js"></script>
+</head>
+
+<body>
+  <div id="parent_dashboard_page">
+    <!-------------------------------------------Navigation Sidebar Here ------------------------------------->
+    <div id="navigation_sidebar">
+      <div id="expand_menu_btn" class="nav_items">
+        <img src="../media/side_bar_icon/menu_icon.svg" />
+        <span id="shopezy_side_bar_txt" class="collapsible_side_bar_text"></span>
+      </div>
+      <div id="navigation_menu_main">
+        <div id="home_btn" class="nav_items selected">
+          <img src="../media/side_bar_icon/home.svg" />
+          <span id="home_side_bar_txt" class="collapsible_side_bar_text"></span>
+        </div>
+        <div id="invoice_btn" class="nav_items">
+          <img src="../media/side_bar_icon/invoice.svg" />
+          <span id="invoice_side_bar_txt" class="collapsible_side_bar_text"></span>
+        </div>
+        <div id="analytics_btn" class="nav_items">
+          <img src="../media/side_bar_icon/graphs.svg" />
+          <span id="analytics_side_bar_txt" class="collapsible_side_bar_text"></span>
+        </div>
+        <div id="stocks_btn" class="nav_items">
+          <img src="../media/side_bar_icon/database.svg" />
+          <span id="stocks_side_bar_txt" class="collapsible_side_bar_text"></span>
+        </div>
+        <div id="transaction_btn" class="nav_items">
+          <img src="../media/side_bar_icon/transactions.svg" />
+          <span id="transaction_side_bar_txt" class="collapsible_side_bar_text"></span>
+        </div>
+        <div id="settings_btn" class="nav_items">
+          <img src="../media/side_bar_icon/setting.svg" />
+          <span id="settings_side_bar_txt" class="collapsible_side_bar_text"></span>
+        </div>
+      </div>
+      <div id="shop_name_badge">
+        <img id="photo_shop_badge" src="../media/userphoto.png" />
+        <div id="shop_badge_texts" class="collapsible_side_bar_text">
+          <span id="name_shop_badge">Lesile Fashion</span>
+          <span id="email_shop_badge">Lesilealexandder@gmail.com</span>
+        </div>
+      </div>
+    </div>
+
+    <!------------------------------------P A G E S------------------------------>
+    <div id="dashboard_right_section">
+      <!-------------------- Home Page ---------------------------->
+      <div id="home_page" class="main_pages" style="display: flex;">
+        <div id="left_home_section">
+
+          <!------------------------Top Blue Cover----------------->
+          <div id="home_store_info_section">
+            <div id="trolley_illustration_img">
+              <img src="../media/home_page/trolley.svg">
+            </div>
+            <div id="shopezy_store_info_sub_section">
+              <span id="welcome_txt_home">Welcome to ShopEzy</span>
+              <div id="store_info_txt">
+                <div id="store_name_home">
+                  <img id="user_profile_home" src="../media/userphoto.png" />
+                  <span id="store_name_txt_home">Lesile Fashion</span>
+                  <img id="verified_icon_home" src="../media/home_page/verified.svg" />
+                </div>
+                <span id="email_store_txt_home">Lesliealexander@gmail.com</span>
+                <span id="mobile_store_txt_home">+1 (629) 555-0129</span>
+                <span id="address_store_txt_home">
+                  2972 Westheimer Rd. Santa Ana Ra nchview , Illinois 85486 USA
+                </span>
+                <div id="bottom_icons_store">
+                  <img id="log_out_icon_home" class="bottom_icons_store_home" src="../media/home_page/log_out.svg">
+                  <img id="edit_account_icon_home" class="bottom_icons_store_home"
+                    src="../media/home_page/edit_icon.svg">
+                  <img id="notification_icon_home" class="bottom_icons_store_home"
+                    src="../media/home_page/notification.svg">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!---------------Middle navigations links -------------->
+          <div id="home_navigation_info_section">
+            <div class="nav_home_btn" id="invo_mid_btn">New Invoice</div>
+            <div class="nav_home_btn" id="stock_mid_btn">Add Products to Stock</div>
+            <div class="nav_home_btn" id="search_mid_btn">
+              <span id="nav_home_btn_txt">Search Products</span>
+              <img id="search_icon_img_home" src="../media/home_page/search_icon.svg">
+            </div>
+            <div class="nav_home_btn" id="analytics_mid_btn">View Analytics</div>
+          </div>
+
+          <!-----------------Bottom table summary -------------->
+          <div id="home_sidebar_summary_section">
+            <div class="half_summar_section">
+              <span id="last_min_invoice_txt" class="summary_table_title">Last mini Invoice History</span>
+              <table class="table_summary_home">
+                <thead>
+                  <tr>
+                    <th id="dashboard_invoicepage_invoiceno">Invoice Number</th>
+                    <th id="dashboard_invoicepage_totalprice">Total Price</th>
+                  </tr>
+                </thead>
+                <tbody id="mini_invoice_history">
+                </tbody>
+              </table>
+            </div>
+            <div class="half_summar_section">
+              <span id="product_out_stock_txt" class="summary_table_title">Product that are out of stock</span>
+              <table class="table_summary_home">
+                <thead>
+                  <tr>
+                    <th id="dashboard_invoice_tablesummary1">Name</th>
+                    <th id="dashboard_invoice_tablesummary2">Product Number</th>
+                    <th id="dashboard_invoice_tablesummary3">Quantity Left</th>
+                  </tr>
+                </thead>
+                <tbody id="stock_out_table">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-----------------Right graph and connection -------------->
+        <div id="right_home_section">
+          <div id="client_connect_section">
+            <span id="no_android_client_txt">No android client connected</span>
+            <span id="client_connected_success_txt" style="display: none;">Connected To </span>
+            <img src="../media/home_page/mobile_image.png" />
+            <div id="connect_android_btn_home">Connect Android Client</div>
+            <div id="disconnect_android_btn_home" style="display: none;">Disconnect</div>
+          </div>
+
+          <div id="sell_summary_graph_section">
+            <div id="parent_summary_container">
+              <div id="left_summary_container" class="half_graph_area_home">
+                <div>
+                  <span class="large_text_suummary">Profit</span>
+                  <span id="profit_val_home" class="larger_text_suummary">₹15.0K</span>
+                </div>
+                <div>
+                  <span class="large_text_suummary">Sell</span>
+                  <span id="sell_val_home" class="larger_text_suummary">₹50.0K</span>
+                </div>
+              </div>
+              <div id="right_summary_container" class="half_graph_area_home">
+                <div>
+                  <div id="growth_circle_indicator">
+                    <span id="growth_indicator_txt">13%</span>
+                    <img id="growth_arrow" src="../media/home_page/Arrow_green.png">
+                  </div>
+                </div>
+                <div>
+                  <span class="large_text_suummary">Transactions</span>
+                  <span class="larger_text_suummary">950</span>
+                </div>
+              </div>
+            </div>
+            <div id="home_page_graph">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-------------------- Invoice Page ---------------------------->
+      <div id="invoice_page" class="main_pages" style="display: none;">
+
+        <p id="Connected_device_InvoicePage">Conneted to Android Mobile Client 123@1991</p>
+
+        <!-- Top Part Starts Here -->
+        <div class="top_section_invoicePage">
+
+          <div class="top_left_section_invoicePage">
+
+            <div>
+              <p id="top_left_section_invoicePage1">Custumer's Name</p> <input type="text" name="Name"
+                id="Name_invoice_new">
+              <p id="top_left_section_invoicePage2">Custumer's Email</p> <input type="email" name="email"
+                id="Email_invoice_new">
+              <p id="top_left_section_invoicePage3">Custumer's Mobile Number</p> <input type="number" name="No"
+                id="Phone_invoice_new">
+            </div>
+
+            <div>
+              <p id="dashboard_top_parts_paymentmethod">Payment Method</p>
+              <select name="Payment" id="Payment_method_invoice_new" class="dropdown">
+                <option value="0" id="dashboard_top_parts_paymentmethod1">Cash</option>
+                <option value="1" id="dashboard_top_parts_paymentmethod2">Credit/Debit</option>
+                <option value="2" id="dashboard_top_parts_paymentmethod3">Phonepay/UPI</option>
+              </select>
+              <p id="dashboard_top_parts_accountant_director">Accountant Director</p>
+              <select name="Payment" id="Accountant_director_invoice_new" class="dropdown">
+
+                <option value="0">Someone 123</option>
+                <option value="1">Someone 231</option>
+              </select>
+              <p id="dashboard_top_parts_invoice_template">Invoice Template</p>
+              <select name="Payment" id="invo" class="dropdown">
+                <option value="Card">Light</option>
+                <option value="UPI">Dark</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="top_right_section_invoicePage">
+
+            <div class="top_right_sec_btn">
+              <button class="invoice_rightBtn" id="preview_btn_invoice_page"><img src="../media/invoicePage/Eye.svg"
+                  alt="">Preview</button>
+              <button class="invoice_rightBtn" id="Bin_btn"><img src="../media/invoicePage/Dust.svg" alt=""></button>
+              <button class="invoice_rightBtn" id="Setting_btn"><img src="../media/invoicePage/settings.svg"
+                  alt=""></button>
+            </div>
+            <!-- below_btn -->
+            <div id="below_btn_card">
+              <h2>Total Amount</h2>
+              <h1 id="grandTotalInv">₹0</h1>
+              <p class="discount_card_invo">Savings ₹0</p>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- Top Part Ends Here -->
+
+        <!-- Bottom Part Starts Here -->
+        <div id="invoice_items_container" class="bottom_section_inviocePage">
+
+          <!-- Connected Device Card -->
+          <div class="item_card Connected_device">
+            <h5 id="continue_scan_to_add_text_devicecard">Continue Scan To Add Products</h5>
+            <img src="../media/add_itm/Group_307.png" alt="">
+            <p>Connected With <span id="Conneted_device_txt">SM F21</span></p>
+          </div>
+
+        </div>
+        <!-- Bottom Part Ends Here -->
+
+      </div>
+
+      <!-------------------- Analytics Page ---------------------------->
+      <div id="analytics_page" class="main_pages" style="display: flex;">
+        <div id="analytics_graph_1"></div>
+        <div id="lowerGraph">
+          <br>
+          <div class="search_subSection">
+            <input type="text" name="Search" id="Search_text_invoice" placeholder="Search">
+            <button id="Search_btn"><img src="../media/invoiceHistory/Search.svg"></button>
+          </div>
+          <div id="graph3">
+          </div>
+      </div>
+      </div>
+
+      <!-------------------- Stock Page ---------------------------->
+      <div id="stocks_page" class="main_pages" style="display: none;">
+        <!----------------------- Stock page here-------------------->
+        <p id="mobile_client_txt">Connect to Android Mobile Client 123@1991</p>
+
+        <!-- top section of stock page -->
+        <div class="top_section">
+          <div class="left_btn_section">
+            <button class="top_btn" id="Bin_stock_btn"><img src="../media/stock_page/Dust.svg"></button>
+            <button class="top_btn" id="fav_stock_btn"><img src="../media/stock_page/Star.svg"></button>
+          </div>
+          <div class="right_btn_section">
+            <button class="top_btn" id="AddItm_stock_btn"><img src="../media/stock_page/Add.svg"><span
+                id="Add_itm_btn">Add
+                Item</span></button>
+            <button class="top_btn" id="anayls_stock_btn"><img src="../media/stock_page/Setting_2.svg"></button>
+            <button class="top_btn" id="setting_stock_btn"><img src="../media/stock_page/settings.svg"></button>
+          </div>
+        </div>
+        <!-- top section of stock page ends -->
+
+        <!-- table section of stock page -->
+        <div id="stocks_tbl">
+          <table>
+
+            <thead>
+              <tr>
+                <th id="barcode_stocks_txt">BARCODE</th>
+                <th id="prod_name_stock_txt">PRODUCT NAME</th>
+                <th id="cost_price_txt">COST PRICE</th>
+                <th id="sell_price_txt">SELL PRICE</th>
+                <th id="profit_txt">PROFIT</th>
+                <th id="stoct_qty_txt">STOCK QTY</th>
+                <th id="discount_off_txt">DISCOUNT OFF</th>
+                <th id="estm_sell_txt">ESTIMATED SELL</th>
+                <th id="updt_on_txt">UPDATED ON</th>
+              </tr>
+            </thead>
+
+            <tbody id="stock_table_body">
+            </tbody>
+          </table>
+          <!-- table section of stock page ends here -->
+        </div>
+        <!----------------------- Stock page here-------------------->
+      </div>
+
+      <!-------------------- Transaction Page ---------------------------->
+      <div id="transactions_page" class="main_pages" style="display: none;">
+        <div class="top_section_invoice">
+          <!-- Top section of Invoice -->
+
+          <div class="search_subSection">
+            <input type="text" name="Search" id="Search_text_invoice" placeholder="Search">
+            <button id="Search_btn"><img src="../media/invoiceHistory/Search.svg"></button>
+          </div>
+
+          <div class="time_interval_search_invoice">
+            <img src="../media/invoiceHistory/change_arrow_left.svg" id="time_stamp_left_btn">
+            <p id="time_stamp_txt">12/10/2021 - 12/11/2021</p>
+            <img src="../media/invoiceHistory/change_arrow_right.svg" id="time_stamp_right_btn">
+          </div>
+
+        </div><!-- Top section of Invoice ends here -->
+
+        <div class="table_Section_invoice">
+          <!------------- Table section of Invoice ------------------------>
+
+          <table>
+            <thead>
+              <tr>
+                <th id="timestamp_txt">TIMESTAMP</th>
+                <th id="invoice_no_txt">INVOICE NUMBER</th>
+                <th id="custmer_name_txt">CUSTOMER'S NAME</th>
+                <th id="total_amnt_txt">TOTAL AMOUNT</th>
+                <th id="payment_method_txt">PAYMENT METHOD</th>
+                <th id="accountant_txt">ACCOUNTANT</th>
+              </tr>
+            </thead>
+
+            <tbody id="invoice_history_table_body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-------------------- Settings Page ---------------------------->
+      <div id="settings_page" class="main_pages" style="display: none;">
+        <div id="setting_side_bar_menu">
+          <span id="settings_title_txt">
+            Settings
+          </span>
+          <div id="navigation_for_settings">
+            <span id="account_setting_btn" class="selected">Account</span>
+            <span id="invoice_setting_btn">Invoice</span>
+            <span id="analytics_setting_btn">Analytics</span>
+            <span id="stocks_setting_btn">Stocks</span>
+            <span id="personalization_setting_btn">Personalization</span>
+          </div>
+        </div>
+
+        <div id="settings_sub_pages">
+          <!-- Account -->
+          <div id="settings_sub_pages_account" class="setting_subpage " style="display: flex;">
+
+            <h1 id="acc_settings">Account</h1>
+            <!-- -------------------------------------------------------------------- -->
+
+
+
+            <div class="container_of_img_settings">
+              <div class="renderImg_acc_settings">
+                <img src="../media/userphoto.png" id="Dp_img_select_accSet">
+                <input type="file" name="file" id="file_acc_setting" hidden>
+              </div>
+
+              <button id="Upload_btn_acc_setting">Upload</button>
+              <button id="remove_btn_acc_setting">Remove</button>
+            </div>
+            <!-- -------------------------------------------------------------------- -->
+            <hr class="horizontal_line_account_settings">
+            <div id="userinfo_account_settings">
+              <div id="leftinfo_account_settings" class="user_info_account_settings">
+                <span class="label_account_settings" id="leftinfo_text1">Shop or Bussiness Name</span>
+                <input type="text" id="account_setting_shop_name" class="userinput_account_settings">
+                <span class="label_account_settings" id="leftinfo_text2">Email</span>
+                <input type="text" id="account_setting_shop_email" class="userinput_account_settings">
+                <span class="label_account_settings" id="leftinfo_text3">Address</span>
+                <input type="text" class="userinput_account_settings" id="addressinput_account_settings">
+
+              </div>
+
+              <div id="rightinfo_account_settings" class="user_info_account_settings">
+                <span class="label_account_settings" id="rightinfo_text1">Shop or Bussiness owner’s Name</span>
+                <input type="text" id="shop_bussiness_name_acc" class="userinput_account_settings">
+                <span class="label_account_settings" id="rightinfo_text2">Mobile Number</span>
+                <input type="text" id="account_setting_shop_mobile" class="userinput_account_settings">
+                <span class="label_account_settings" id="rightinfo_text3">Bussiness Category</span>
+                <select type="text" class="userinput_account_settings" id="bussiness_category_acc">
+                  <option value="0" id="buisnessoption_settings_1">Pet shop</option>
+                  <option value="1" id="buisnessoption_settings_2">Drugs</option>
+                  <option value="2" id="buisnessoption_settings_3">Grocery</option>
+                  <option value="3" id="buisnessoption_settings_4">Alchohol</option>
+                  <option value="4" id="buisnessoption_settings_5">Fashion</option>
+                </select>
+              </div>
+
+            </div>
+            <div id="verifycontainer_account_settings">
+              <B class="label_account_settings" id="label_account_settings_text">Request Veryfication</B>
+              <p id="label_account_settings_txt">Congratulation ! You are eligible for a verified bussiness . We need to
+                physically verify your shop in
+                order to add you to Shopezy’s bussiness chain. By joining Shopezy’s bussiness chain you will get
+                technical support from our team. By joining Shopezy’s food chain there has been an increase of upto 33%
+                growth in bussiness across globe. To know more about Shopezy’s verified account . Visit Shopezy’s
+                bussiness chain feature page.
+              </p>
+              <button type="text " class="btn_account_settings" id="btn_account_settings_requestverification">Request
+                Verification </button>
+              <br>
+              <B class="label_account_settings" id="add_local_passcode_text">Add Local Passcode</B>
+              <p id="add_local_passcode_paragraph">A local passcode keeps your account more secured and private</p>
+              <button class="btn_account_settings" id="add_local_passcode_btn">Add Local Passcode</button>
+              <br>
+              <button id="savebtn_account_settings">Save changes</button>
+
+            </div>
+
+          </div>
+          <!-- Account end -->
+
+          <!-- invoice -->
+          <div id="settings_sub_pages_invoice" class="setting_subpage " style="display: none;">
+
+            <h1 class="text_invoice_settings" id="setting_invoice_heading_text">Invoice</h1>
+            <p class="text_invoice_settings" id="setting_invoice_text_template">Template</p>
+            <div id="template_option_invoice_settings">
+              <div class="temp_option_invoice_settings"><img src="../media/settings_page/optionTemp1.png" alt=""></div>
+              <div class="temp_option_invoice_settings"><img src="../media/settings_page/optionTemp2.png" alt=""></div>
+              <div class="temp_option_invoice_settings"><img src="../media/settings_page/optionTemp3.png" alt=""></div>
+            </div>
+            <div id="text_statement_invoice_settings">Payment Mode Accepted</div>
+            <div id="option_payment_invoice_settings">
+              <span class="acc_1_settings" id="credit_invoice_settings">Credit Card</span>
+              <span class="acc_1_settings" id="debit_invoice_settings">Debit Card</span>
+              <span class="acc_1_settings" id="Upi_invoice_settings">Upi Payment</span>
+              <span class="acc_1_settings" id="cash_invoice_settings">Cash Payment</span>
+            </div>
+            <div>
+              
+            </div>
+            <div id="Accountant_detail_div_invoice">
+              <span class="acc_1_settings" id="invoice_accountantdirector_text">Accountant Director</span>
+              <div class="info_accountant_invoice_settings">
+                <span class="accountant_name_txt" >Jacob Jones</span>
+                <div class="signature_director_invoice_settings"><img src="../media/settings_page/Jacob Jones.png"
+                  ></div>
+                <img src="../media/settings_page/dustbinIcon.svg" class="director_option_invoice_settings">
+              </div>
+
+              <div class="info_accountant_invoice_settings">
+                <span class="accountant_name_txt" >Annette Black</span>
+                <div class="signature_director_invoice_settings"><img src="../media/settings_page/Anettte Bl..png"
+                  ></div>
+                <img src="../media/settings_page/dustbinIcon.svg" class="director_option_invoice_settings">
+              </div>
+
+              <div class="info_accountant_invoice_settings">
+                <span class="accountant_name_txt" >Bessie Cooper</span>
+                <div class="signature_director_invoice_settings"><img src="../media/settings_page/Bessie.png">
+                </div>
+                <img src="../media/settings_page/dustbinIcon.svg" class="director_option_invoice_settings">
+              </div>
+
+            </div>
+            <div id="newaccountdirector_invoice_settings">New Accountant Director
+            </div>
+            <div>
+              <button id="savebtn_invoice_settings">Save changes</button>
+            </div>
+
+          </div>
+          <!-- invoice end -->
+          <div id="settings_sub_pages_analytics" class="setting_subpage " style="display: none;">
+            Analytics Settings
+          </div>
+          <!-- stock -->
+          <div id="settings_sub_pages_stocks" class="setting_subpage " style="display: none;">
+
+            <h1 class="stocks_initial_settings" id="settings_stockes_heading_text">Stocks</h1>
+            <div class="text_fetchEnable_personalisation_settings">
+              <span id="settings_stocks_fetchproductdetails">Fetch Product Details From Server</span>
+              <!-- <img class="enable_disable_personalisation_settings" src="../Media/enablebtn.svg" alt=""> -->
+            </div>
+            <div class="text_fetchEnable_personalisation_settings">
+              <span id="settings_stocks_remindforunavailability">Remind for product unavailability</span>
+              <!-- <img class="enable_disable_personalisation_settings" src="../Media/disablebtn.svg" alt=""> -->
+            </div>
+
+            <div id="quantity_text_stocks_settings">Quantity</div>
+            <div id="quantity_option_stocks_settings">
+              <span class="acc_1_settings" id="unit_stocks_settings">Units</span>
+              <span class="acc_1_settings" id="weight_stocks_settings">Kilograms</span>
+              <span class="acc_1_settings" id="meter_stocks_settings">Meters</span>
+              <span class="acc_1_settings" id="quantity_stocks_settings">Litres</span>
+              <!-- <img id="addoption_quantity_stocks_settings" src="../Media/addOption.svg" alt=""> -->
+            </div>
+            <div>
+              <!-- <img id="realstocksadd_stocks_settings" src="../Media/realstocksadd.svg" alt=""> -->
+            </div>
+            <div class="savebtn_div_settings">
+              <button id="savebtn_stocks_settings">Save changes</button>
+            </div>
+
+          </div>
+          <!-- stock end -->
+          <!-- personalisation  -->
+          <div id="settings_sub_pages_personalization" class="setting_subpage " style="display: none;">
+
+            <h1 class="text_personalisation_settings" id="settings_personalisation_heading_text">Personalisation</h1>
+            <div class="language_personalisation_settings">
+              <span id="settings_personalisation_language_text">Language</span>
+              <select name="" id="selectmenu_personalisation_settings">
+                <option value="hi" id="settings_personalisation_languageselect1">Hindi</option>
+                <option value="en" id="settings_personalisation_languageselect2">English</option>
+              </select>
+
+            </div>
+            <div class="language_personalisation_settings">
+              <span id="settings_personalisation_currency_text">Currency</span>
+              <select name="" id="selectmenu2_personalisation_settings">
+                <option value="0" id="settings_personalisation_select_currency">Select</option>
+                <option value="1" id="settings_personalisation_select_currency1">Dollar</option>
+                <option value="2" id="settings_personalisation_select_currency2">Pound</option>
+                <option value="3" id="settings_personalisation_select_currency3">Rupee</option>
+              </select>
+            </div>
+            <div id="Enable_product_detail" class="text_fetchEnable_personalisation_settings">
+              <span id="settings_personalisation_fetchproductdetails">Fetch Product Details From Server</span>
+              <svg id="Enable_product_detail_svg" class="toggle_btns_personalization_settings toggle_btn_on" width="60"
+                height="28" viewBox="0 0 60 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="60" height="28" rx="14" fill="#EEEEEE" />
+                <circle cx="46" cy="14" r="14" fill="#4087F3" />
+              </svg>
+            </div>
+            <div id="remind_product_unavailability" class="text_fetchEnable_personalisation_settings">
+              <span id="settings_personalsation_remindforunavailability">Remind for product unavailability</span>
+              <svg id="remind_product_unavailability_svg" class="toggle_btns_personalization_settings toggle_btn_off"
+                width="60" height="28" viewBox="0 0 60 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="60" height="28" rx="14" fill="#EEEEEE" />
+                <circle cx="14" cy="14" r="14" fill="#6B6B6B" />
+              </svg>
+            </div>
+            <div class="savebtn_div_settings">
+              <button id="savebtn_personalisation_settings">Save changes</button>
+            </div>
+
+          </div>
+          <!-- personalisation end -->
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-----------------M O D E L B O X --- C O N T A I N E R ---------------------->
+  
+  <div id="model_box_container" class="debug" style="display: none;">
+
+    <!------------------- Connect to Android dialog box ------------------>
+    <div id="connect_to_android_page" style="display: none;">
+
+      <div id="part1_connect_to_android">
+        <span id="how_to_connect_lbl" class="large_text_connect_client">How to Connect?</span>
+        <img src="../Media/connectToAndroid/download_illustration.svg" alt="">
+        <span id="download_and_install_lbl"> Download and install</span>
+        <span id="client_shopexzy_lbl">shopezy client app</span>
+        <span id="link_download_shopezy_lbl">https://www.someurl.com/somesuffix</span>
+        <img id="mobile_image_illustration_connect" src="../Media/home_page/mobile_image.png" alt="">
+        <span id="click_to_connect_lbl">Click on Scan to Connect</span>
+        <span id="make_sure_lbl">Make sure both mobile and desktop are on same network</span>
+      </div>
+      <div id="part2_connect_to_android">
+        <img id="close_connect_client_btn" src="../Media/passcode/close.svg" />
+        <span id="scan_connect_lbl_txt" class="large_text_connect_client">Scan To Connect</span>
+        <div id="qrcode_ip"></div>
+        <div>
+          <input type="checkbox" name="Keep me sign in" id="sign">
+          <span id="check_connect_client_lbl">Keep me signed in</span>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <!------------------- Notification dialog box ------------------>
+    <div id="notification_dialog_page" class="debug" style="display: none;">
+
+    </div>
+
+    <!-- Notification Modal window  -->
+    <div id="notification_modal" style="display: none;">
+      <div id="notification_modal_title">
+        Notifications
+        <img src="../media/close_btnn.svg" id="close_notify_modal">
+      </div>
+      <table id="notification_table">
+        <tr>
+          <td class="Date_notify_bar">26/11/2021</td>
+        </tr>
+        <tr>
+          <td class="notify_bar_txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptate?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptate?
+          </td>
+        </tr>
+
+
+      </table>
+    </div>
+    <!-- Notification Modal window ends -->
+
+    <!------------------- Add product to stock dialog box ------------------>
+    <div id="add_stock_item_dialog_page" style="display: none;">
+
+      <!-- Add Item Subpage -->
+      <div id="add_itm_subpage" style="display: none;">
+
+        <div class="add_itm_subpage_header">
+          <div id="add_itm_header_txt">add new product</div>
+          <div><img src="../media/passcode/close.svg" alt="" id="add_itm_close_btn"></div>
+        </div>
+
+        <!-- Add item main Div -->
+        <div id="add_itm_subpage_main" class="add_itm_subpage_main">
+
+          <!-- Add item card using javascript-->
+
+          <!-- Connected Device card -->
+          <div class="add_item_card Connected_device">
+            <h5 id="device_card_continuescan_txt">Continue Scan To Add Products</h5>
+            <img src="../media/add_itm/Group_307.png" alt="">
+            <p id="connected_device_connectwith_txt">Connected With <span id="Conneted_device_txt">SM F21</span></p>
+          </div>
+          <!-- Connected Device card -->
+
+        </div>
+        <!-- Add item main Div -->
+
+        <!--  Update button   -->
+        <div class="UpdateStockContainer">
+          <button id="updateStockBtn">
+            Update Stocks
+          </button>
+        </div>
+        <!--  Update button   -->
+
+      </div>
+      <!-- Pop up Screen -->
+      <div id="popUp_screen_cnfrm_addItm" style="display: none;">
+
+        <div class="Confirm_popUp_addItm">
+          <p id="popup_screen_discard_question">Do you really want to discard changes ?</p>
+          <div class="popUP_btn_addItm">
+            <button class="PopUp_btn_chng_addItm" id="yes_btn_cnfrm_addItm">YES</button>
+            <button class="PopUp_btn_chng_addItm" id="no_btn_cnfrm_addItm">NO</button>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <!-- update item main Div -->
+    <div id="update_itm_subpage_main" class="update_itm_subpage_main" style="display: none;">
+
+      <div class=" update_item_card">
+
+        <div class="update_item_card_top">
+          <p id="upd_item_barcode">40879453222</p>
+          <img id="upd_itm_delete" src="../media/add_itm/dustbinIcon.svg" alt="" class="update_remove_itm_Btn">
+        </div>
+        <div class="update_item_card_txt">
+          <p>Product Name</p>
+          <input type="text" name="product_name" id="upd_itm_prod_name">
+        </div>
+        <div>
+          <div class="Pricediv">
+            <p>Cost Price</p>
+            <input id="upd_cost_price" type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+          </div>
+          <div class="Pricediv">
+            <p>Sell Price</p>
+            <input id="upd_sell_price" type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+          </div>
+          <div class="Pricediv">
+            <p>Stock quantity</p>
+            <input id="quantity_in_stock" type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+          </div>
+          <button id="update_stock_item" class="button_upd_itm">Update</button>
+          <button id="discard_and_close" class="button_upd_itm">Discard</button>
+        </div>
+      </div>
+
+    </div>
+    <!-- update item main Div end -->
+
+    <!-- Add PassCode Modal -->
+    <div id="add_passcode_modal" style="display: none;">
+      <div id="top_title_bar_addPasscode">
+        <img id="logo_img_AddPass" src="../media/logoicon.svg">
+        <span id="app_name_addPass">ShopEzy</span>
+        <img id="close_passcode_btn_addPass" src="../media/passcode/close.svg" />
+      </div>
+
+      <div id="center_area_add_passcode">
+
+        <img id="userphoto_img_add_passcode" src="../media/userphoto.png" alt="">
+        <div id="passcode_area_add_passcode">
+          <div class="ADDpassCode_input_div">
+            <p>New Passcode : </p>
+            <input id="new_passcode_input" type="password" />
+          </div>
+
+          <div class="ADDpassCode_input_div">
+            <p>Re-Enter Passcode : </p>
+            <input id="re_new_passcode_input" type="password" />
+          </div>
+        </div>
+        <img id="update_passcode_btn" src="../media/passcode/back.svg" />
+
+      </div>
+    </div>
+    <!-- Add PassCode Modal Ends -->
+
+    <!-- Message Modal window  -->
+    <div id="message_alert_modal" style="display: none;">
+
+      <div id="message_alert_title">
+        Alert
+      </div>
+      <div id="message_section_alert">
+        <p id="error_message_txt">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, aliquid?</p>
+      </div>
+
+    </div>
+    <!-- Message Modal window ends -->
+
+    
+
+    <!-- Add Accountant PopUP  -->
+    <div id="addAccountant_popUp" style="display: none;">
+      <div id="addAccountant_popUp_titleBar">
+          <p>Add Accountant</p>
+          <img src="../media/close_btnn.svg" alt="" id="addAccountant_popUp_close_btn">
+      </div>
+      <div class="addAccountantPopUp_Main">
+          <div class="Addaccountant_popUP_card">
+              <p>Accountant Name :</p>
+              <input type="text" name="accountant_name" id="accountant_popUp_name_txt">
+              <p>Accountant's Sign :</p>
+                  <div id="accountant_sign_upldiv">
+                      <img src="" alt="Not Selected" id="accountant_sign_upld_img">
+                  </div>
+                  <button id="file_sign_accountant_btn">Choose File</button>
+                  <input type="file" name="accountant_sign_file" id="file_sign_accountant" hidden>
+          </div>
+          <div class="btn_accountant_div">
+              <button id="btn_to_add_accountant">Update</button>
+          </div>
+      </div>
+  </div>
+    <!-- Add Accountant PopUP Ends -->
+  </div>
+<!-----------------M O D E L B O X --- C O N T A I N E R --- E N D S ---------------------->
+
+<div id="hiddenIP" style="display: none;"></div>
+</body>
+
+<script type="text/javascript" defer>
+  let runtimes = 0;
+  // qr generated when clicked on connect btn.also getting the ip from hiddenIP
+  document.getElementById("connect_android_btn_home").addEventListener("click", () => {
+    if (runtimes == 0) {
+      let url = document.getElementById("hiddenIP").innerHTML;
+      var qrcode = new QRCode(document.getElementById("qrcode_ip"), {
+        text: url,
+        width: 256,
+        height: 256,
+        colorDark: "#ffffff",
+        colorLight: "#393E3A",
+        correctLevel: QRCode.CorrectLevel.H,
+      });
+      runtimes++;
+    }
+  });
+</script>
+
+</html>
