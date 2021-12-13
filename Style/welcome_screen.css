@@ -1,0 +1,328 @@
+:root{
+    --dark_black:#222222;
+
+}
+@font-face {
+    font-family:audiowide ;
+    src: url(../media/font/Audiowide.ttf);
+    
+}
+@font-face {
+    font-family: baloo;
+    src: url(../media/font/baloofont/BalooDa2-Bold.ttf)
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #36393F; 
+}
+
+#left_section {
+    flex-direction: column;
+    height: 100vh;
+    display: flex;
+    width: 60%;
+    background-image: url(../media/backgroundimages/woodenhouse.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+#parent_registration{
+    width: 100%;
+    display: flex;
+    overflow-x: hidden;
+}
+#top_section,#bottom_section{
+    
+    display: flex;
+    width: 100%;
+    
+}
+#right_section{
+    flex-direction: column;
+    display: flex;
+    width: 40%;
+}
+#logoicon_img{
+    height: 30px;
+    padding-top: 12px;
+    padding-left: 10px;
+    
+}
+#shopezy_text{
+    font-family: Audiowide;
+    font-size: 14px;
+    margin-left: 15px;
+    margin-top: 15px ;
+    
+}
+#topleft_section{
+    display: flex;
+}
+#welcome_text{
+    font-family: Baloo;
+    font-size: 60px;
+    position: absolute;
+    margin-top: 191px;  
+    margin-left: 320px;
+}
+#welcomesupport_text{
+    font-family: Baloo;
+    position: absolute;
+    font-size: 24px;
+    margin-top: 279px;
+    margin-left: 290px;
+    
+    
+}
+#left_center{
+    /* text-align: center; */
+    display:flex;
+    justify-content: left;
+    
+}
+#language_select{
+    /* border: 2px solid rgba(64, 135, 243, 0.8); */
+    background: rgba(64, 135, 243, 0.8);
+    width: 122px;
+    height: 40px;
+    border-radius: 4px;
+    margin-left: 1030px;
+    position: absolute;
+}
+#createaccount_text{
+    font-family: Arial;
+    /* font-style: normal;
+    font-weight: normal; */
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-top: 92px;
+    margin-left: 182px;
+    position: absolute;
+}
+#homofaber_icon{
+    position: absolute;
+    margin-top: 147px;
+    margin-left: 228px;
+}
+/* ---------------------------------------- */
+
+#dpContainer{
+    position: absolute;
+    margin-top: 147px;
+    margin-left: 228px;
+    height: 95px;
+    width: 95px;
+    border: 1px solid #222428;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#photo{
+    height: 100%;
+    width: 100%;
+}
+#file{
+    display: none;
+}
+#uploadBtn{
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.541);
+    color: wheat;
+    line-height: 100px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+}
+#Cam_btn{
+    position: relative;
+    /* top: ; */
+    z-index: 4;
+}
+/* ---------------------------------------- */
+
+.accountinfo_text{
+    color: #EEEEEE;
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 20px;
+    font-family: Arial;
+    font-size: 12px;
+    margin-left: 92px;
+}
+#bottom_section{
+    display: flex;
+    width: 100%;
+    margin-top: 287px;
+    overflow-y: scroll;
+    scroll-behavior: auto;
+        
+}
+.bottom_section1{
+    flex-direction: column;   
+    width: 50%;
+    padding: 5%;
+    
+}
+.userinput_accountinfo{
+    width: 450px;
+    height: 44px;
+    color: white;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-left: 92px;
+    background: #303339;
+    border: 1px solid #222428;
+}
+#address_userinput{
+    height: 125px;
+}
+#bottom_section::-webkit-scrollbar {
+    display: none;
+}
+#continue_btn{
+    background-color: #4087F3;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 4px;
+    width: 415px;
+    height: 44px;
+    color: white;
+    padding: 18px;
+    border: none;
+    margin-left: 140px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+#close_btn{
+    position: fixed;
+    padding: 10px;
+    right: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#close_btn:hover{
+    background-color: red;
+}
+
+#minimize_btn{
+    position: fixed;
+    cursor: pointer;
+    right: 40px;
+    padding-top:16px ;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 16px;
+    border-radius: 5px;  
+}
+#minimize_btn:hover{
+    background-color: rgba(187, 185, 185, 0.712);
+}
+#questionmark_icon{
+    position: fixed;
+    margin-top: 47%;
+    margin-left: 60%;
+    cursor: pointer;
+}
+#registertext_1,#registertext_3{
+    color: #6B6B6B;
+    font-family: Arial;
+    font-size: 12px;
+}
+#registertext_2,#registertext_4{
+    color: #01C7F2;
+    font-family: Arial;
+    font-size: 12px;
+    cursor: pointer;
+}
+#condition_text{
+    margin-top: 10px;
+    margin-left: 140px;
+    padding-bottom: 15px;
+}
+/* ......................................................privacy policy page.................................................. */
+#privacy_policy{
+    width: 40%;
+}
+#backarrow{
+    margin-top: 105px;
+    margin-left: 92px;
+    cursor: pointer;
+}
+#terms_text{
+    margin-left: 35px;
+    display:absolute ;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 24px;
+}
+#heading_1{
+    margin-top: 40px;
+    margin-left: 90px;
+    display: flex;
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+#paragraph1_text,#paragraph2_text,#paragraph3_text{
+    font-size: 14px;
+    color: #eeeeee;
+    margin-top: 30px;
+    margin-left: 93px;
+    font-family: arial;
+}
+#heading_2{
+    margin-top: 40px;
+    margin-left: 90px;
+    display: flex;
+    font-family: Arial;
+    font-size: 18px;
+    color: #EEEEEE;
+}
+/* ..........................................documentation page........................................ */
+#documentation_page{
+    width: 40%;
+}
+#backarrow_2{
+    margin-top: 105px;
+    margin-left: 92px;
+    cursor: pointer;
+}
+#docs_heading{
+    margin-left: 45px;
+    display:absolute ;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 28px;
+}
+#faq_heading{
+    margin-top: 50px;
+    margin-left: 90px;
+    display: flex;
+    font-family: Arial;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+.paragraph_documentationpage{
+    font-size: 14px;
+    color: #eeeeee;
+    margin-top: 30px;
+    margin-left: 93px;
+    font-family: arial;
+}
+#docs_heading1{
+    margin-left: 90px;
+    display:flex ;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 28px;
+    margin-top: 50px;
+}
+
