@@ -253,17 +253,11 @@
       </div>
 
       <!-------------------- Analytics Page ---------------------------->
-      <div id="analytics_page" class="main_pages" style="display: flex;">
-        <div id="analytics_graph_1"></div>
-        <div id="lowerGraph">
-          <br>
-          <div class="search_subSection">
-            <input type="text" name="Search" id="Search_text_invoice" placeholder="Search">
-            <button id="Search_btn"><img src="../media/invoiceHistory/Search.svg"></button>
-          </div>
-          <div id="graph3">
-          </div>
-      </div>
+      <div id="analytics_page" class="main_pages" style="display: grid;">
+        <div id="analytics_graph_1" class="debug analytic_sub_graphs"></div>
+        <div id="analytics_graph_2" class="debug analytic_sub_graphs"></div>
+        <div id="analytics_graph_3" class="debug analytic_sub_graphs"></div>
+        <div id="analytics_graph_4" class="debug analytic_sub_graphs"></div>
       </div>
 
       <!-------------------- Stock Page ---------------------------->
@@ -366,7 +360,6 @@
             <span id="personalization_setting_btn">Personalization</span>
           </div>
         </div>
-
         <div id="settings_sub_pages">
           <!-- Account -->
           <div id="settings_sub_pages_account" class="setting_subpage " style="display: flex;">
@@ -455,31 +448,28 @@
               <span class="acc_1_settings" id="cash_invoice_settings">Cash Payment</span>
             </div>
             <div>
-              
+              <!-- <div id="paymentoption_add_invoice_settings"><img src="../Media/paymentModeAddOption.png" alt=""></div> -->
             </div>
-            <div id="Accountant_detail_div_invoice">
+            <div>
               <span class="acc_1_settings" id="invoice_accountantdirector_text">Accountant Director</span>
-              <div class="info_accountant_invoice_settings">
-                <span class="accountant_name_txt" >Jacob Jones</span>
-                <div class="signature_director_invoice_settings"><img src="../media/settings_page/Jacob Jones.png"
-                  ></div>
-                <img src="../media/settings_page/dustbinIcon.svg" class="director_option_invoice_settings">
+              <div id="info_accountant1_invoice_settings">
+                <span id="jacob_jones_text">Jacob Jones</span>
+                <div id="signature_directors1_invoice_settings"><img src="../media/settings_page/Jacob Jones.png"
+                    alt=""></div>
+                <img src="../media/settings_page/dustbinIcon.svg" alt="" class="director_option_invoice_settings">
               </div>
-
-              <div class="info_accountant_invoice_settings">
-                <span class="accountant_name_txt" >Annette Black</span>
-                <div class="signature_director_invoice_settings"><img src="../media/settings_page/Anettte Bl..png"
-                  ></div>
-                <img src="../media/settings_page/dustbinIcon.svg" class="director_option_invoice_settings">
+              <div id="info_accountant2_invoice_settings">
+                <span id="annette_blact_text">Annette Black</span>
+                <div id="signature_directors2_invoice_settings"><img src="../media/settings_page/Anettte Bl..png"
+                    alt=""></div>
+                <img src="../media/settings_page/dustbinIcon.svg" alt="" class="director_option_invoice_settings">
               </div>
-
-              <div class="info_accountant_invoice_settings">
-                <span class="accountant_name_txt" >Bessie Cooper</span>
-                <div class="signature_director_invoice_settings"><img src="../media/settings_page/Bessie.png">
+              <div id="info_accountant3_invoice_settings">
+                <span id="bessie_cooper_text">Bessie Cooper</span>
+                <div id="signature_directors3_invoice_settings"><img src="../media/settings_page/Bessie.png" alt="">
                 </div>
-                <img src="../media/settings_page/dustbinIcon.svg" class="director_option_invoice_settings">
+                <img src="../media/settings_page/dustbinIcon.svg" alt="" class="director_option_invoice_settings">
               </div>
-
             </div>
             <div id="newaccountdirector_invoice_settings">New Accountant Director
             </div>
@@ -569,7 +559,6 @@
       </div>
 
     </div>
-
   </div>
 
   <!-----------------M O D E L B O X --- C O N T A I N E R ---------------------->
@@ -756,35 +745,9 @@
     </div>
     <!-- Message Modal window ends -->
 
-    
-
-    <!-- Add Accountant PopUP  -->
-    <div id="addAccountant_popUp" style="display: none;">
-      <div id="addAccountant_popUp_titleBar">
-          <p>Add Accountant</p>
-          <img src="../media/close_btnn.svg" alt="" id="addAccountant_popUp_close_btn">
-      </div>
-      <div class="addAccountantPopUp_Main">
-          <div class="Addaccountant_popUP_card">
-              <p>Accountant Name :</p>
-              <input type="text" name="accountant_name" id="accountant_popUp_name_txt">
-              <p>Accountant's Sign :</p>
-                  <div id="accountant_sign_upldiv">
-                      <img src="" alt="Not Selected" id="accountant_sign_upld_img">
-                  </div>
-                  <button id="file_sign_accountant_btn">Choose File</button>
-                  <input type="file" name="accountant_sign_file" id="file_sign_accountant" hidden>
-          </div>
-          <div class="btn_accountant_div">
-              <button id="btn_to_add_accountant">Update</button>
-          </div>
-      </div>
-  </div>
-    <!-- Add Accountant PopUP Ends -->
+    <div id="hiddenIP" style="display: none;"></div>
   </div>
 <!-----------------M O D E L B O X --- C O N T A I N E R --- E N D S ---------------------->
-
-<div id="hiddenIP" style="display: none;"></div>
 </body>
 
 <script type="text/javascript" defer>

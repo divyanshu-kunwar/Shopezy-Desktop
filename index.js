@@ -131,3 +131,27 @@ ipcMain.on("dashboard_screen:logout",()=>{
   dashboardWindow.close()
   createWelcomeWindow()
 })
+
+ipcMain.on("invoice:print", () => {
+
+  let options = {
+    marginsType: 0,
+    pageSize: 'A4',
+    printBackground: true,
+    printSelectionOnly: false,
+    landscape: false
+  }
+
+  invoicePreviewWindow.webContents.printToPDF(options).then(data => {
+    fs.writeFile(path.join(__dirname + "/temp/1.pdf"), data, function (err) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('PDF Generated Successfully');
+      }
+    });
+  }).catch(error => {
+    console.log(error)
+  });
+
+})
