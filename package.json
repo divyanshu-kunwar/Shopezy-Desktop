@@ -1,14 +1,17 @@
 {
-  "name": "shopezy",
-  "version": "1.0.0",
-  "description": "",
+  "name": "shopezy2.0",
+  "version": "2.0.0",
+  "description": "Invoice Solution for small bussiness",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "electron": "^16.0.4"
+    "electron": "^16.0.0"
+  },
+  "dependencies": {
+    "sqlite3": "^5.0.2"
   }
 }
