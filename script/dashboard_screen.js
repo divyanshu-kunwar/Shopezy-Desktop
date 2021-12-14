@@ -1231,11 +1231,13 @@ function addOrUpdateItemStock() {
             }
         })
     }
-    getAllItemFromStock()
+    setTimeout(() =>{
+        getAllItemFromStock()
+    },600);
     setTimeout(() => {
         console.log(all_items_in_stocks)
         addItemsToStockTable()
         add_itm_close_btn.click()
-    }, 300);
+    }, 1200);
 
 }

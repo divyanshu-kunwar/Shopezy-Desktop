@@ -83,13 +83,16 @@ function loadDataForInvoice(invoice_number) {
             return;
         }
         // push data to a variable
-        document.getElementById('invoice_number').innerHTML = "#" + row.invoice_id
+        setTimeout(() => {
+            document.getElementById('invoice_number').innerHTML = "#" + row.invoice_id
         document.getElementById('invoice_date').innerHTML = row.invoice_date
         document.getElementById('total_items').innerHTML = row.total_items
         document.getElementById('accountant_name').innerHTML = row.accountant_director
         document.getElementById('total_price').innerHTML = row.invoice_total_amount
         document.getElementById('payment_method_info').innerHTML = row.payment_mode
         loadCustomerData(row.customer_id)
+        }, 400);
+        
 
     })
     loadItemData(invoice_number)
