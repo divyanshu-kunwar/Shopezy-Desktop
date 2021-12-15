@@ -1059,7 +1059,10 @@ function toAppendItemToInvoice(barcode_item_received) {
             })
 
         db.get(`SELECT * FROM stockitem WHERE barcode=${[barcode_item_received]}`, (err, row) => {
-            if (err) console.log(err)
+            if (err){ 
+                console.log(err) 
+                return}
+                try{
             document.getElementById(`${[barcode_item_received]}prod_nameIn`).innerHTML = row.product_name
             document.getElementById(`${[barcode_item_received]}sellingPriceIn`).innerHTML = "₹" + row.selling_price
             document.getElementById(`${[barcode_item_received]}MRPIn`).innerHTML = "₹" + (row.selling_price + 0.1 * row.selling_price).toString()
@@ -1071,8 +1074,10 @@ function toAppendItemToInvoice(barcode_item_received) {
             last_grandTotalValue = last_grandTotalValue.replace("₹", "")
             last_grandTotalValue = parseInt(last_grandTotalValue)
             last_grandTotal.innerHTML = "₹" + (last_grandTotalValue + row.selling_price)
+        }catch(err){
+            console.log(err)
+        }
         })
-
     }, 20)
 
 
