@@ -17,7 +17,3 @@ ShopEzy is an invoice and bussiness solution for small bussiness including groce
 + ElectronJS for modern and native looking cross platform app for windows , linux and mac.
 + Android Studio & SDK for mobile app [ Other Repo]
 + Google Machine Learning Model for barcode scanner 
-
-## How to Contribute?
-+ Read our guideline in contributing.md 
-+ Join our discord server https://discord.gg/TDMQJBBZ
